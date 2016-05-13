@@ -11,5 +11,5 @@ install:
   - curl https://install.meteor.com/ | sh
 before_script:
   - meteor npm install
-  - npm install -g gagarin
+  - npm install gagarin
 ci: gagarin -v
