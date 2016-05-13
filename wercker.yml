@@ -25,19 +25,19 @@ build:
     - script:
         name: install meteor
         code: |
-          echo "meteor || curl https://install.meteor.com | /bin/sh"
+          meteor || curl https://install.meteor.com | /bin/sh
     - script:
         name: install npm packages
         code: |
-          echo "meteor npm install"
+          meteor npm install
     - script:
         name: install gagarin
         code: |
-          echo "npm install -g gagarin"
+          npm install -g gagarin
     - script:
         name: run tests
         code: |
-          echo "gagarin -v"
+          gagarin -v
 
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
