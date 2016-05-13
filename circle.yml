@@ -14,6 +14,7 @@ dependencies:
     - ~/.meteor
   override:
     - meteor || curl https://install.meteor.com | /bin/sh
+    - meteor npm install
     - npm install -g gagarin
 
 test:
