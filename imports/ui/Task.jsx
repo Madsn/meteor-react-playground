@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import { Tasks } from '../api/tasks.js';
 
-// Task component - represents a single todo item
+// Task component - represents a single task item
 export default class Task extends Component {
   toggleChecked() {
     // Set the checked property to the opposite of its current value
@@ -50,7 +50,7 @@ export default class Task extends Component {
           <strong>{this.props.task.username}</strong>: {this.props.task.text}
         </span>
       </li>
-    )
+    );
   }
 }
 

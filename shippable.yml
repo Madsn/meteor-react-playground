@@ -3,6 +3,10 @@ language: node_js
 node_js:
   - 4.2.3
 before_install:
+  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash
+  - . ~/.nvm/nvm.sh
+  - nvm install 6.1.0
+  - nvm use 6.1.0
   - node --version
   - npm install -g gagarin
 install:
