@@ -11,4 +11,4 @@ install:
   - curl https://install.meteor.com/ | sh
   - meteor npm install
   - sudo npm -g install gagarin
-script: gagarin -v
+script: sudo gagarin -v
