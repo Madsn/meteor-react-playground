@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 
-import RaisedButton from 'material-ui/RaisedButton';
-
 import {Tasks} from '../../api/tasks.js';
 
 import Task from './Task.jsx';
@@ -70,7 +68,6 @@ export default class TodoApp extends Component {
 
   render() {
     return (
-      <MuiThemeProvider muiTheme={muiTheme}>
         <div className="container">
           <header>
             <h1>Todo List ({this.props.incompleteCount})</h1>
@@ -87,9 +84,6 @@ export default class TodoApp extends Component {
 
             <AccountsUIWrapper />
 
-            <RaisedButton
-              label="Super cool test button"/>
-
             { this.props.currentUser ?
               <form className="new-task" onSubmit={this.handleSubmit.bind(this)}>
                 <input
@@ -105,7 +99,6 @@ export default class TodoApp extends Component {
             {this.renderTasks()}
           </ul>
         </div>
-      </MuiThemeProvider>
     );
   }
 }
