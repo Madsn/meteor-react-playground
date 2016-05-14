@@ -12,4 +12,6 @@ meteor npm install
 ```
 
 # Test commands
+```
 gagarin --verbose
+```
