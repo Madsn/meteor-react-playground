@@ -8,10 +8,10 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {deepOrange500} from 'material-ui/styles/colors';
 
-import {Tasks} from '../api/tasks.js';
+import {Tasks} from '../../api/tasks.js';
 
 import Task from './Task.jsx';
-import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import AccountsUIWrapper from '../AccountsUIWrapper.jsx';
 
 
 const muiTheme = getMuiTheme({

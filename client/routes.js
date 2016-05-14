@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 
 // route components
 import App from '../imports/ui/App.jsx';
-import TodoApp from '../imports/ui/TodoApp.jsx';
+import TodoApp from '../imports/ui/todo/TodoApp.jsx';
 
 const renderRoutes = () => (
   <Router history={browserHistory}>

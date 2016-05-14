@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
 import classnames from 'classnames';
 
-import { Tasks } from '../api/tasks.js';
+import { Tasks } from '../../api/tasks.js';
 
 // Task component - represents a single task item
 export default class Task extends Component {
@@ -24,7 +24,7 @@ export default class Task extends Component {
     // so that we can style them nicely in CSS
     const taskClassName = classnames({
       checked: this.props.task.checked,
-      private: this.props.task.private,
+      private: this.props.task.private
     });
 
     return (
