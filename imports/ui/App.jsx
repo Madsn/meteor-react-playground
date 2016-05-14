@@ -1,12 +1,24 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
+import {Meteor} from 'meteor/meteor';
+import {createContainer} from 'meteor/react-meteor-data';
 
-import { Tasks } from '../api/tasks.js';
+import RaisedButton from 'material-ui/RaisedButton';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {deepOrange500} from 'material-ui/styles/colors';
+
+import {Tasks} from '../api/tasks.js';
 
 import Task from './Task.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+
+
+const muiTheme = getMuiTheme({
+  palette: {
+    accent1Color: deepOrange500,
+  },
+});
 
 // App component - represents the whole app
 export default class App extends Component {
@@ -67,37 +79,42 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <header>
-          <h1>Todo List ({this.props.incompleteCount})</h1>
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <div className="container">
+          <header>
+            <h1>Todo List ({this.props.incompleteCount})</h1>
 
-          <label className="hide-completed">
-            <input
-              type="checkbox"
-              readOnly
-              checked={this.state.hideCompleted}
-              onClick={this.toggleHideCompleted.bind(this)}
-            />
-            Hide Completed Tasks
-          </label>
-
-          <AccountsUIWrapper />
-
-          { this.props.currentUser ?
-            <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+            <label className="hide-completed">
               <input
-                type="text"
-                ref="textInput"
-                placeholder="Type to add new tasks"
+                type="checkbox"
+                readOnly
+                checked={this.state.hideCompleted}
+                onClick={this.toggleHideCompleted.bind(this)}
               />
-            </form> : ''
-          }
-        </header>
+              Hide Completed Tasks
+            </label>
 
-        <ul>
-          {this.renderTasks()}
-        </ul>
-      </div>
+            <AccountsUIWrapper />
+
+            <RaisedButton
+              label="Super cool test button"/>
+
+            { this.props.currentUser ?
+              <form className="new-task" onSubmit={this.handleSubmit.bind(this)}>
+                <input
+                  type="text"
+                  ref="textInput"
+                  placeholder="Type to add new tasks"
+                />
+              </form> : ''
+            }
+          </header>
+
+          <ul>
+            {this.renderTasks()}
+          </ul>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
@@ -112,8 +129,8 @@ export default createContainer(() => {
   Meteor.subscribe('tasks');
 
   return {
-    tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
-    incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
+    tasks: Tasks.find({}, {sort: {createdAt: -1}}).fetch(),
+    incompleteCount: Tasks.find({checked: {$ne: true}}).count(),
     currentUser: Meteor.user(),
   };
 }, App);
