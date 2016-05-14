@@ -4,21 +4,12 @@ import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 
 import RaisedButton from 'material-ui/RaisedButton';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {deepOrange500} from 'material-ui/styles/colors';
 
 import {Tasks} from '../../api/tasks.js';
 
 import Task from './Task.jsx';
 import AccountsUIWrapper from '../AccountsUIWrapper.jsx';
 
-
-const muiTheme = getMuiTheme({
-  palette: {
-    accent1Color: deepOrange500,
-  },
-});
 
 // TodoApp component - represents the to-do sample functionality
 export default class TodoApp extends Component {
