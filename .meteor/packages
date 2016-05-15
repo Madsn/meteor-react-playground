@@ -21,6 +21,7 @@ react-meteor-data
 accounts-ui
 accounts-password
 practicalmeteor:mocha
-anti:gagarin
+dispatch:mocha-phantomjs
+practicalmeteor:chai
 less
 huttonr:bootstrap3
