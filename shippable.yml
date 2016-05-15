@@ -9,7 +9,7 @@ before_install:
   - node --version
 install:
   - curl https://install.meteor.com/ | sh
-  - sudo apt-get install libfontconfig
+  - sudo apt-get install libfontconfig -y
   - sudo npm install -g phantomjs
 before_script:
   - meteor npm install
