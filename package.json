@@ -1,9 +1,6 @@
 {
   "name": "meteor-react-playground",
   "private": true,
-  "scripts": {
-    "test": "gagarin -v"
-  },
   "dependencies": {
     "classnames": "^2.2.5",
     "meteor-node-stubs": "~0.2.0",
